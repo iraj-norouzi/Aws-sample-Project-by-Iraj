@@ -14,19 +14,22 @@ pipeline {
         
         stage('Terraform Init') {
             steps {
-                sh 'cd terraform && terraform init'
+                sh 'echo "Terraform Init" '
+                // sh 'cd terraform && terraform init'
             }
         }
         
         stage('Terraform Plan') {
             steps {
-                sh 'cd terraform && terraform plan'
+                sh 'echo "Terraform Plan" '
+                // sh 'cd terraform && terraform plan'
             }
         }
         
         stage('Terraform Apply') {
             steps {
-                sh 'cd terraform && terraform apply -auto-approve'
+                sh 'echo "Terraform Apply" '
+                // sh 'cd terraform && terraform apply -auto-approve'
             }
         }
     }
