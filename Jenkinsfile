@@ -1,15 +1,15 @@
 pipeline {
     parameters {
-    choice(name: 'ACTION', choices: ['Deploy', 'Destroy'], description: 'Choose whether to deploy or destroy the infrastructure')
+    choice(name: 'ACTION', choices: ['Deploy1', 'Destroy1'], description: 'Choose whether to deploy or destroy the infrastructure')
 }
 
     agent any
     stages {
         stage('Checkout') {
             steps {
-                echo 'Hello World'
+                echo 'Hello World1'
                 git branch: 'main', url: 'https://github.com/iraj-norouzi/Aws-sample-Project-by-Iraj.git'
-                echo 'Hello World'
+                echo 'Hello World1'
             }
         }
 
@@ -26,7 +26,7 @@ pipeline {
 
         stage('Test') {
             steps {
-                echo 'Test 1000'
+                echo 'Test 2000'
             }
         }
     }
