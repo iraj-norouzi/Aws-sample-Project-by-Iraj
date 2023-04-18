@@ -10,7 +10,7 @@ pipeline {
         }
         stage('Test') {
             steps {
-                echo 'Test'
+                echo 'Test 1000'
             }
         }
     }
