@@ -1,25 +1,27 @@
 pipeline {
-
-    parameters {
-        booleanParam(name: 'autoApprove', defaultValue: false, description: 'Automatically run apply after generating plan?')
-    } 
+    agent any
     environment {
-        AWS_ACCESS_KEY_ID     = credentials('AWS_ACCESS_KEY_ID')
+        AWS_ACCESS_KEY_ID = credentials('AWS_ACCESS_KEY_ID')
         AWS_SECRET_ACCESS_KEY = credentials('AWS_SECRET_ACCESS_KEY')
     }
-
-   agent  any
     stages {
-        stage('checkout') {
+        stage('Display Variables') {
             steps {
-                 script{
-                        dir("terraform")
-                        {
-                            git "https://github.com/iraj-norouzi/Aws-sample-Project-by-Iraj.git"
-                        }
-                    }
-                }
+                echo "AWS_ACCESS_KEY_ID: ${AWS_ACCESS_KEY_ID}"
+                echo "AWS_SECRET_ACCESS_KEY: ${AWS_SECRET_ACCESS_KEY}"
             }
+        }
+    }
+    stages {
+        stage('Clone Git') {
+            steps {
+                git url: 'https://github.com/iraj-norouzi/Aws-sample-Project-by-Iraj.git', credentialsId: 'my-git-credentials'
+            }
+        }
+        
+}
+
+
 
     //     stage('Plan') {
     //         steps {
