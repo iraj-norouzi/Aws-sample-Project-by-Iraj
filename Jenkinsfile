@@ -1,3 +1,6 @@
+parameters {
+    choice(name: 'ACTION', choices: ['Deploy', 'Destroy'], description: 'Choose whether to deploy or destroy the infrastructure')
+}
 pipeline {
     agent any
     stages {
