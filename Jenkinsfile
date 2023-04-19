@@ -15,9 +15,11 @@ pipeline {
 
         stage('Plan') {
             steps {
-                sh 'pwd ; terraform init'
-                sh "pwd ; terraform plan -out tfplan"
-                sh 'pwd ; terraform show -no-color tfplan > tfplan.txt'
+                sh 'whoami'
+                sh 'which terraform'
+                // sh 'pwd ; terraform init'
+                // sh "pwd ; terraform plan -out tfplan"
+                // sh 'pwd ; terraform show -no-color tfplan > tfplan.txt'
             }
         }
 
