@@ -13,14 +13,6 @@ pipeline {
             }
         }
 
-        stage('Install Terraform') {
-        steps {
-            sh 'curl -O https://releases.hashicorp.com/terraform/0.15.5/terraform_0.15.5_linux_amd64.zip'
-            sh 'unzip terraform_0.15.5_linux_amd64.zip'
-            sh 'sudo mv terraform /usr/local/bin/'
-        }
-        }
-
         stage('Plan') {
             steps {
                 sh 'pwd ; terraform init'
