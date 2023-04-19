@@ -6,10 +6,9 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                Checkout([$class: 'GitSCM', branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/iraj-norouzi/Aws-sample-Project-by-Iraj.git']]])
-                // echo 'Hello World1'
-                // git branch: 'main', url: 'https://github.com/iraj-norouzi/Aws-sample-Project-by-Iraj.git'
-                // echo 'Hello World2'
+                echo 'Hello World1'
+                git branch: 'main', url: 'https://github.com/iraj-norouzi/Aws-sample-Project-by-Iraj.git'
+                echo 'Hello World2'
             }
         }
 
