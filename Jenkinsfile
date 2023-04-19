@@ -16,6 +16,7 @@ pipeline {
         stage('Plan') {
             steps {
                 sh 'whoami'
+                sh 'pwd'
                 // sh 'which terraform'
                 // sh 'pwd ; terraform init'
                 // sh "pwd ; terraform plan -out tfplan"
