@@ -26,7 +26,7 @@ pipeline {
 
         stage('Test') {
             steps {
-                echo 'Test 2000'
+                echo 'Test 000'
             }
         }
     }
