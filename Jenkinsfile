@@ -17,7 +17,7 @@ pipeline {
                 sh 'whoami'
                 sh 'pwd'
                 // sh 'which terraform'
-                sh '/var/jenkins_home/workspace/AWS-Test/terraform init'
+                sh 'cd terraform;/var/jenkins_home/workspace/AWS-Test/terraform init'
                 // sh "pwd ; terraform plan -out tfplan"
                 // sh 'pwd ; terraform show -no-color tfplan > tfplan.txt'
             }
