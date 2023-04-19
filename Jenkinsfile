@@ -18,7 +18,7 @@ pipeline {
                 sh 'whoami'
                 sh 'pwd'
                 // sh 'which terraform'
-                // sh 'pwd ; terraform init'
+                sh 'terraform init'
                 // sh "pwd ; terraform plan -out tfplan"
                 // sh 'pwd ; terraform show -no-color tfplan > tfplan.txt'
             }
